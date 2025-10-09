@@ -1,0 +1,44 @@
+body {
+    background-image: url(./img/tierno.jpg);
+    background-size: cover;     /* Ajusta la imagen al tamaño del form */
+    background-position:center; /* Centra la imagen */
+   
+   background-repeat: no-repeat; /* Evita que la imagen se repita */
+  
+   background-attachment: fixed; /* Fija la imagen al fondo */
+}
+
+
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #800e13;
+    text-shadow: 4px 4px hsl(357, 38%, 51%);; /* Sombra negra, 3px derecha, 3px abajo */
+}
+.flex-container {
+  display:flex;/* Habilita Flexbox */
+  justify-content: space-around; /* Distribuye los elementos del menú */
+  background-color: hwb(34 18% 17% / 0.656);
+  padding: 15px 0; 
+}
+
+.flex-container a {
+    color: rgb(22, 107, 147); /* Color del texto de los enlaces */
+    opacity: 0.8;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    padding: 10px 0px; /* Espaciado interno de los enlaces */
+}
+.flex-container > div {
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fcddbc;
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 20px;
+  
+}
+
+
+

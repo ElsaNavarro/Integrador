@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viemport" content="center" >
+<title> Formulario </title>
+<style>
+  form {
+    width: 300px;
+    padding:200px;
+    margin: 100px auto;
+    line-height: 1.5;
+    background-image: url("./img/masc1.jpg" ); /* Imagen de fondo */
+    background-size: cover;      /* Ajusta la imagen al tamaño del form */
+    background-position: center; /* Centra la imagen */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    color: oklab(43.918% 0.02237 -0.2658 / 0.801);
+    align-content: center;            
+  }
+  label {
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 6px;
+    color: oklab(38.385000000000005% -0.00795 -0.24596 / 0.987);
+    font-weight: bold;
+    font-size: 25px;
+  }
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    background-color: #84c2f2cb;
+    border: none;
+    border-radius: 5px;
+    opacity: 0.6;
+    font-weight: bold;
+    
+  }
+  button {
+    background-color: rgb(7, 119, 188);
+    color:oklab(38.385000000000005% -0.00795 -0.24596 / 0.987);
+    font-weight: bold;  
+    margin-top: 15px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  body{
+    background-color: #D9DBBC;}
+  nav {
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  
+  div a {
+    
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    padding: 10px 0px; /* Espaciado interno de los enlaces */
+  }
+  .container {
+    border: 3px solid  #338486;
+
+    height: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+</style>
+</head>
+<body>
+<nav class="container">
+  <div><a href="index.html" >PRINCIPAL </a></div>
+<div><a href="articulo.html" >ARTICULO </a></div>
+</nav>
+
+<form action="" method="get">
+  <h1>Contacto De Mascota </h1>
+<div class="item">
+  <label for="nombre" >Nombre y Apellido: </label>
+  <input type="text" name="nombre" minlength="10" maxlength="50">
+</div>
+<div class="item">
+ <label for="mail">Email: </label>
+  <input type="email" name="mail" required>
+</div>
+<div>
+<div class="item">
+ <label for="Telefono">Telefono:</label>
+  <input type="tel" name="Telefono" required maxlength="15" pattern="^\d{8,15}$">
+</div>
+<div class="item">
+<label>Mascota:
+      <select name="tipo" required>
+        <option value="otro">Otro </option>
+        <option value="perro">Perro/a</option>
+        <option value="gato">Gato/a</option>
+      </select>
+    </label>
+</div>
+ <button type="submit">Enviar</button>    
+</form>
+</body>
+</html>

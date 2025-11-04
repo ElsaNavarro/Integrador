@@ -75,11 +75,11 @@
 <div><a href="articulo.html" >ARTICULO </a></div>
 </nav>
 
-<form action="" method="get">
+<form action="" method="get" name="formulario"  novalidate  onsubmit="return validarForm()">
   <h1>Contacto De Mascota </h1>
 <div class="item">
   <label for="nombre" >Nombre y Apellido: </label>
-  <input type="text" name="nombre" minlength="10" maxlength="50">
+  <input type="text" name="nombre" value="nombre" minlength="10" maxlength="50">
 </div>
 <div class="item">
  <label for="mail">Email: </label>
@@ -101,5 +101,15 @@
 </div>
  <button type="submit">Enviar</button>    
 </form>
+<script>
+function validarForm() {
+  const formulario = document.forms["formulario"];
+  console.log("Función ejecutada correctamente ✅");
+  console.log(formulario); // esto muestra el formulario completo
+  
+  return false; // evita que se envíe
+}
+</script>
+
 </body>
 </html>

@@ -155,15 +155,29 @@ body {
 
     return false; // Solo se envía si es true
   }
-  function generaRes(nombre, telefono, mail) {
-  const divResultado = document.getElementById('resultado');
-  divResultado.innerHTML = `
-      <h3>Sus datos :</h3>
-      <p><b>Nombre:</b> ${nombre}</p>
-      <p><b>Mail:</b> ${mail}</p>
-      <p><b>Teléfono:</b> ${telefono}</p>
-     `;
-}
+ function generaRes(nombre, telefono, mail) {
+    const divResultado = document.getElementById('resultado');
+
+    // Limpiamos resultados anteriores
+    divResultado.innerHTML = '';
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = 'Sus datos:';
+    divResultado.appendChild(titulo);
+
+    const pNombre = document.createElement('p');
+    pNombre.textContent = 'Nombre: ' + nombre;
+    divResultado.appendChild(pNombre);
+
+    const pMail = document.createElement('p');
+    pMail.textContent = 'Mail: ' + mail;
+    divResultado.appendChild(pMail);
+
+    const pTel = document.createElement('p');
+    pTel.textContent = 'Teléfono: ' + telefono;
+    divResultado.appendChild(pTel);
+  }
+
 </script>
 
 </body>

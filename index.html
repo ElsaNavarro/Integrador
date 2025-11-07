@@ -17,5 +17,61 @@
   <div><a href="http://www.twitter.com">Twitter </a></div>
   
 </nav>
+<h2>  imagenes de carousel</h2>
+
+
+  <div class="carrusel">
+    <img id="imagenCarrusel" src="" alt="">
+
+    <div class="controls">
+      <button onclick="anterior()">◀ Anterior</button>
+      <button onclick="siguiente()">Siguiente ▶</button>
+    </div>
+  </div>
+  <script src="carrusel.js"></script>
 </body>
-</html>   
+
+</html>   <script>
+    // Array ,ruta de imágenes
+    const imagenes = [
+    
+      'img/imagen2.jpg',
+      'img/amigos3.jpeg',
+      'img/imagen4.jpg',
+      "imagen5.jpg",
+      "imagen6.jpg",
+      "imagen7.jpg",
+    ];
+
+       // Índice actual
+    let indice = 0;
+
+    // Elemento <img> del HTML
+    const imagenCarrusel = document.getElementById("imagenCarrusel");
+
+    // Función que muestra la imagen según el índice
+    function mostrarImagen() {
+      imagenCarrusel.src = imagenes[indice];
+    }
+
+    // Función para avanzar
+    function siguiente() {
+      indice++;
+      if (indice >= imagenes.length) {
+        indice = 0; // vuelve al inicio
+      }
+      mostrarImagen();
+    }
+
+    // Función para retroceder
+    function anterior() {
+      indice--;
+      if (indice < 0) {
+        indice = imagenes.length - 1; // vuelve al final
+      }
+      mostrarImagen();
+    }
+
+    // Mostrar la primera imagen al cargar
+    mostrarImagen();
+  </script>

@@ -1,44 +1,36 @@
-<script>
-    // Array ,ruta de imágenes
-    const imagenes = [
-    
-      "imagen2.jpg",
-      "amigos3.jpeg",
-      "imagen4.jpg",
-      "imagen5.jpg",
-      "imagen6.jpg",
-      "imagen7.jpg",
-    ];
+document.addEventListener('DOMContentLoaded', () => {
+  const imagenes = [
+    "img/imagen2.jpg",
+    "img/amigos3.jpeg",
+    "img/imagen4.jpg",
+    "img/imagen5.jpg",
+    "img/imagen6.jpg",
+    "img/imagen7.jpg",
+  ];
 
-       // Índice actual
-    let indice = 0;
+  let indice = 0;
+  const imagenCarrusel = document.getElementById("imagenCarrusel");
+  const btnAnterior = document.getElementById("btnAnterior");
+  const btnSiguiente = document.getElementById("btnSiguiente");
 
-    // Elemento <img> del HTML
-    const imagenCarrusel = document.getElementById("imagenCarrusel");
+  function mostrarImagen() {
+    if (!imagenCarrusel) return;
+    imagenCarrusel.src = imagenes[indice];
+  }
 
-    // Función que muestra la imagen según el índice
-    function mostrarImagen() {
-      imagenCarrusel.src = imagenes[indice];
-    }
-
-    // Función para avanzar
-    function siguiente() {
-      indice++;
-      if (indice >= imagenes.length) {
-        indice = 0; // vuelve al inicio
-      }
-      mostrarImagen();
-    }
-
-    // Función para retroceder
-    function anterior() {
-      indice--;
-      if (indice < 0) {
-        indice = imagenes.length - 1; // vuelve al final
-      }
-      mostrarImagen();
-    }
-
-    // Mostrar la primera imagen al cargar
+  function siguiente() {
+    indice = (indice + 1) % imagenes.length;
     mostrarImagen();
-  </script>
+  }
+
+  function anterior() {
+    indice = (indice - 1 + imagenes.length) % imagenes.length;
+    mostrarImagen();
+  }
+
+  if (btnSiguiente && btnAnterior) {
+    btnSiguiente.addEventListener('click', siguiente);
+    btnAnterior.addEventListener('click', anterior);
+  } 
+  mostrarImagen();
+});
